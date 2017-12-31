@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"container/list"
+	"fmt"
+)
 
 func main() {
 	//声明map
@@ -20,6 +23,20 @@ func main() {
 	3: func(a int) int {
 		return 3+a
 	}}
-
+	_,ok:=map2[2]
+	if ok{
+		fmt.Println("yes")
+		delete(map2,2)
+	} else {
+		fmt.Println("no")
+	}
+	l:=list.New()
+	for i:=0;i<5;i++{
+		l.PushBack(i)
+	}
+	for e:=l.Front();e!=nil;e=e.Next(){
+		fmt.Println(e.Value,"list")
+	}
+	fmt.Println(len(map2))
 	fmt.Println(mf[2](3))
 }
